@@ -1,8 +1,7 @@
-version: '3.8'
-
 services:
   nsz-to-nsp-webgui:
     build: .
+    container_name: nsz-to-nsp-webgui
     ports:
       - "8002:8000"
     volumes:
@@ -13,12 +12,26 @@ services:
       # Mount source code for development (optional, remove in production)
       - .:/app
     environment:
-      - FLASK_APP=main.py
-      - FLASK_ENV=production  # Change to development if needed
+      # Environment variables for the application
+      - PYTHONUNBUFFERED=1
+      - PYTHONDONTWRITEBYTECODE=1
     restart: unless-stopped
     networks:
       - nsz-network
+    # Health check to ensure the service is running properly
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
 
 networks:
   nsz-network:
     driver: bridge
+
+# Instructions:
+# To start the application: docker-compose up -d
+# To view logs: docker-compose logs -f
+# To stop the application: docker-compose down
+# To rebuild after code changes: docker-compose up -d --build

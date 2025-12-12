@@ -28,8 +28,8 @@ COPY . /app/
 RUN mkdir -p uploads/games output keys static/css static/js templates \
     && touch uploads/.gitkeep output/.gitkeep keys/.gitkeep
 
-# Expose port (update if your app uses a different port)
-EXPOSE 5000
+# Expose port (the application runs on port 8000)
+EXPOSE 8000
 
 # Run the application
 CMD ["python", "main.py"]
