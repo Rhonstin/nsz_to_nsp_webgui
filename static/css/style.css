@@ -1,0 +1,111 @@
+/* Additional custom styles */
+.mt-2 {
+    margin-top: 20px;
+}
+
+.card {
+    margin-bottom: 30px;
+}
+
+.file-field .file-path-wrapper {
+    overflow: hidden;
+    padding-left: 10px;
+}
+
+#download-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#download-section li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.success-message {
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+.error-message {
+    color: #F44336;
+    font-weight: bold;
+}
+
+.info-message {
+    color: #2196F3;
+    font-weight: bold;
+}
+
+.status-message {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+}
+
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* Button alignment and styling */
+.btn-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.btn-centered {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.btn-aligned {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.btn-aligned .btn {
+    flex: 1;
+    margin: 0 5px;
+}
+
+/* Card content alignment */
+.card-action {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* File upload button alignment */
+.file-field .btn {
+    float: left;
+    height: 3rem;
+    line-height: 3rem;
+}
+
+/* Directory upload section */
+.dir-upload-btn {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.dir-upload-btn input[type=file] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+/* Directory selection */
+#directory-select {
+    display: block;
+    width: 100%;
+}

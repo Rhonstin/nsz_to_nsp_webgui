@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NSZ to NSP Converter</title>
+    <!-- Materialize CSS -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12">
+                <h1 class="center-align">NSZ to NSP Converter</h1>
+                <p class="center-align">Convert Nintendo Switch NSZ files to NSP format</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s12 m6">
+                <div class="card">
+                    <div class="card-content">
+                        <span class="card-title">Upload Production Keys</span>
+                        <p>Upload your prod.keys file for Nintendo Switch decryption.</p>
+
+                        <div class="file-field input-field">
+                            <div class="btn">
+                                <span>Choose Keys File</span>
+                                <input type="file" id="keys-file" accept=".keys">
+                            </div>
+                            <div class="file-path-wrapper">
+                                <input class="file-path validate" type="text" placeholder="Upload prod.keys file">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col s12 center-align">
+                                <button class="btn waves-effect waves-light" id="upload-keys-btn">
+                                    Upload Keys
+                                    <i class="material-icons right">file_upload</i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div id="keys-upload-result" class="mt-2"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s12 m6">
+                <div class="card">
+                    <div class="card-content">
+                        <span class="card-title">Upload NSZ Files</span>
+                        <p>Upload NSZ file(s) for conversion to NSP format.</p>
+
+                        <div class="file-field input-field">
+                            <div class="btn">
+                                <span>Choose NSZ File(s)</span>
+                                <input type="file" id="nsz-file" accept=".nsz" multiple>
+                            </div>
+                            <div class="file-path-wrapper">
+                                <input class="file-path validate" type="text" placeholder="Upload one or more NSZ files">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col s6">
+                                <button class="btn waves-effect waves-light" id="convert-btn">
+                                    Convert to NSP
+                                    <i class="material-icons right">swap_horiz</i>
+                                </button>
+                            </div>
+                            <div class="col s6">
+                                <button class="btn waves-effect waves-light orange" id="convert-all-btn">
+                                    Convert All
+                                    <i class="material-icons right">folder</i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div id="conversion-result" class="mt-2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s12">
+                <div class="card">
+                    <div class="card-content">
+                        <span class="card-title">Available NSZ Files</span>
+                        <div id="files-section">
+                            <p>Loading available files...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s12">
+                <div class="card">
+                    <div class="card-content">
+                        <span class="card-title">Manage Internal Folders</span>
+                        <div class="row">
+                            <div class="col s4 center-align">
+                                <button class="btn waves-effect waves-light red" id="clean-uploads-btn">
+                                    Clean Uploads
+                                    <i class="material-icons right">delete</i>
+                                </button>
+                            </div>
+                            <div class="col s4 center-align">
+                                <button class="btn waves-effect waves-light orange" id="clean-output-btn">
+                                    Clean Output
+                                    <i class="material-icons right">delete</i>
+                                </button>
+                            </div>
+                            <div class="col s4 center-align">
+                                <button class="btn waves-effect waves-light red darken-3" id="clean-all-btn">
+                                    Clean All
+                                    <i class="material-icons right">delete_forever</i>
+                                </button>
+                            </div>
+                        </div>
+                        <div id="clean-uploads-result" class="mt-2"></div>
+                        <div id="clean-output-result" class="mt-2"></div>
+                        <div id="clean-all-result" class="mt-2"></div>
+                        <div id="download-section">
+                            <p>No converted files available yet.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Materialize JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
